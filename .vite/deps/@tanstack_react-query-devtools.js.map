@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@tanstack/react-query-devtools/src/index.ts"],
+  "sourcesContent": ["'use client'\n\nimport * as devtools from './devtools'\n\nexport const ReactQueryDevtools: (typeof devtools)['ReactQueryDevtools'] =\n  process.env.NODE_ENV !== 'development'\n    ? function () {\n        return null\n      }\n    : devtools.ReactQueryDevtools\n"],
+  "mappings": ";;;;;;;;;;AAIO,IAAMA,sBACX,QACI,WAAY;AACV,SAAO;AACT,IACS;",
+  "names": ["ReactQueryDevtools"]
+}
