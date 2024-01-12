@@ -11,8 +11,6 @@ import {
   OutlinedInput,
   Typography,
 } from '@mui/material';
-import background from '../../assets/background.jpg';
-import CustomLoader from '../../components/CustomLoader';
 import LoginHook from '../../hooks/LoginHook';
 
 const Login = () => {
@@ -24,12 +22,9 @@ const Login = () => {
     showPassword,
     handleClickShowPassword,
     handleMouseDownPassword,
-    currentUser,
   } = LoginHook();
 
-  return currentUser.isLoading ? (
-    <CustomLoader />
-  ) : (
+  return (
     <Box
       sx={{
         display: 'flex',
@@ -37,7 +32,7 @@ const Login = () => {
         alignItems: 'center',
         height: '100vh',
         flexDirection: 'column',
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url('./src/assets/background.jpg')`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
@@ -84,18 +79,18 @@ const Login = () => {
         </Box>
 
         <FormControl sx={{ m: 1, width: '25ch' }} variant='outlined'>
-          <InputLabel htmlFor='outlined-adornment-password'>Usiaro</InputLabel>
+          <InputLabel htmlFor='username' data-testid='username'>
+            Usuario
+          </InputLabel>
           <OutlinedInput
             label='Password'
             onChange={(text: any) => handleLogin(text, 'user')}
           />
         </FormControl>
         <FormControl sx={{ m: 1, width: '25ch' }} variant='outlined'>
-          <InputLabel htmlFor='outlined-adornment-password'>
-            Contraseña
-          </InputLabel>
+          <InputLabel htmlFor='password'>Contraseña</InputLabel>
           <OutlinedInput
-            id='outlined-adornment-password'
+            id='password'
             type={showPassword ? 'text' : 'password'}
             endAdornment={
               <InputAdornment position='end'>
