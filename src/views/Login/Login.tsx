@@ -12,6 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 import LoginHook from '../../hooks/LoginHook';
+import background from '../../assets/background.jpg';
 
 const Login = () => {
   const {
@@ -32,7 +33,7 @@ const Login = () => {
         alignItems: 'center',
         height: '100vh',
         flexDirection: 'column',
-        backgroundImage: `url('./src/assets/background.jpg')`,
+        backgroundImage: `url(${background})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
