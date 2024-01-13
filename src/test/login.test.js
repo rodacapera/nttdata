@@ -10,6 +10,8 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 
+jest.mock('../assets/background.png');
+
 test('Should have a user name and password field, also submit button', () => {
   const container = render(
     <QueryClientProvider client={new QueryClient()}>

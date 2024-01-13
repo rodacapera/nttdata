@@ -15,6 +15,7 @@ export default {
   },
   transformIgnorePatterns: ['node_modules/(?!(@my-cool-package)/)'],
   moduleNameMapper: {
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__ mocks __/fileMock.js',
+    '\\.(css)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png)$': 'identity-obj-proxy',
   },
 };
